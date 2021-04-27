@@ -22,12 +22,12 @@ jobs:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: us-east-2
-    - name: lista local
-      run: ls
     - name: Goto folder
       run: cd fn-get-weather-info/src/fn-get-weather-info
+    - name: lista local
+      run: ls
     - name: Install dependencies
-      run: dotnet restore /fn-get-weather-info/src/fn-get-weather-info
+      run: dotnet restore 
     - name: Build
       run: dotnet build --configuration Release --no-restore /fn-get-weather-info/src/fn-get-weather-info
     - name: Test
