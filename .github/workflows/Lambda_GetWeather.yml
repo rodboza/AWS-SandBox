@@ -25,10 +25,10 @@ jobs:
     - name: lista local
       run: ls
     - name: Goto folder
-      run: cd /fn-get-weather-info/src/fn-get-weather-info
+      run: cd fn-get-weather-info/src/fn-get-weather-info
     - name: Install dependencies
-      run: dotnet restore
+      run: dotnet restore /fn-get-weather-info/src/fn-get-weather-info
     - name: Build
-      run: dotnet build --configuration Release --no-restore
+      run: dotnet build --configuration Release --no-restore /fn-get-weather-info/src/fn-get-weather-info
     - name: Test
-      run: dotnet test --no-restore --verbosity normal
+      run: dotnet test --no-restore --verbosity normal /fn-get-weather-info/src/fn-get-weather-info
