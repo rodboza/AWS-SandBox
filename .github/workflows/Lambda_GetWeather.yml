@@ -25,7 +25,7 @@ jobs:
     - name: lista local
       run: ls
     - name: Goto folder
-      run: cd /aws-sandbox/fn-get-weather-info/src/fn-get-weather-info
+      run: cd /fn-get-weather-info/src/fn-get-weather-info
     - name: Install dependencies
       run: dotnet restore
     - name: Build
