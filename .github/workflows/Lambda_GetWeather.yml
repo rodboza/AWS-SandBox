@@ -26,11 +26,15 @@ jobs:
       run: dotnet tool install -g Amazon.Lambda.Tools
     - name: lista local
       run: ls
-    - name: Install dependencies
+    - name: Install dependencies Source
       run: dotnet restore fn-get-weather-info/src/fn-get-weather-info
+    - name: Install dependencies Test
+      run: dotnet restore fn-get-weather-info/test/fn-get-weather-info.Tests
     - name: Build
       run: dotnet build --configuration Release --no-restore fn-get-weather-info/src/fn-get-weather-info
     - name: Test
-      run: dotnet test --verbosity normal fn-get-weather-info/test/fn-get-weather-info.Tests
+      run: dotnet test --no-restore --verbosity normal fn-get-weather-info/test/fn-get-weather-info.Tests
     - name: Deploy AWS 
       run: dotnet lambda deploy-function fn-get-weather-info --aws-access-key-id ${{ secrets.AWS_ACCESS_KEY_ID }} --aws-secret-key ${{ secrets.AWS_SECRET_ACCESS_KEY }}  -pl fn-get-weather-info/src/fn-get-weather-info
+    - name: Invoke AWS Lambda Function
+      run: dotnet lambda invoke-function fn-get-weather-info --payload "uuuppperrr" --aws-access-key-id ${{ secrets.AWS_ACCESS_KEY_ID }} --aws-secret-key ${{ secrets.AWS_SECRET_ACCESS_KEY }}  -pl fn-get-weather-info/src/fn-get-weather-info
