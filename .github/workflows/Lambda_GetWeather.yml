@@ -32,3 +32,5 @@ jobs:
       run: dotnet build --configuration Release --no-restore fn-get-weather-info/src/fn-get-weather-info
     - name: Test
       run: dotnet test --no-restore --verbosity normal fn-get-weather-info/src/fn-get-weather-info
+    - name: Deploy AWS
+      run: dotnet lambda deploy-function fn-get-weather-info --aws-access-key-id ${{ secrets.AWS_ACCESS_KEY_ID }} --aws-secret-key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
