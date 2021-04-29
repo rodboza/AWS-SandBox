@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30002.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aws-lambda", "aws-lambda", "{1B62C9E1-B130-45A6-80E3-6ABED436F7AE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "fn-get-weather-info", "fn-get-weather-info\src\fn-get-weather-info\fn-get-weather-info.csproj", "{96633FCB-3B63-4313-B049-4E3152557564}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "fn-get-weather-info.Tests", "fn-get-weather-info\test\fn-get-weather-info.Tests\fn-get-weather-info.Tests.csproj", "{57F39676-8820-48EB-AF16-B1D6A0F5D731}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "work-flows", "work-flows", "{9DFDFBFE-4E09-48C2-BA44-A443440C0BE8}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\Lambda_GetWeather.yml = .github\workflows\Lambda_GetWeather.yml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{96633FCB-3B63-4313-B049-4E3152557564}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96633FCB-3B63-4313-B049-4E3152557564}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96633FCB-3B63-4313-B049-4E3152557564}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96633FCB-3B63-4313-B049-4E3152557564}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57F39676-8820-48EB-AF16-B1D6A0F5D731}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57F39676-8820-48EB-AF16-B1D6A0F5D731}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57F39676-8820-48EB-AF16-B1D6A0F5D731}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57F39676-8820-48EB-AF16-B1D6A0F5D731}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{96633FCB-3B63-4313-B049-4E3152557564} = {1B62C9E1-B130-45A6-80E3-6ABED436F7AE}
+		{57F39676-8820-48EB-AF16-B1D6A0F5D731} = {1B62C9E1-B130-45A6-80E3-6ABED436F7AE}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C41F323B-6D77-4B5F-80C2-99CB0BD7B62B}
+	EndGlobalSection
+EndGlobal
