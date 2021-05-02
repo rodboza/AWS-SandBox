@@ -21,7 +21,10 @@ namespace fn_get_weather_info
         /// <returns></returns>
         public string FunctionHandler(Object input, ILambdaContext context)
         {
+            context.Logger.LogLine($">>>>>>>>> inicio LOG");
             context.Logger.LogLine($">>>>>>>>> tipo {input.GetType().ToString()}");
+            context.Logger.LogLine($">>>>>>>>> Conteudo {input.ToString()}");
+            context.Logger.LogLine($">>>>>>>>> Fim  LOG");
             return input.ToString()?.ToUpper();
         }
     }
