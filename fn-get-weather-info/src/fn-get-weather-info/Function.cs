@@ -19,9 +19,10 @@ namespace fn_get_weather_info
         /// <param name="input"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public string FunctionHandler(string input, ILambdaContext context)
+        public string FunctionHandler(Object input, ILambdaContext context)
         {
-            return input?.ToUpper();
+            context.Logger.LogLine($">>>>>>>>> tipo {input.GetType().ToString()}");
+            return input.ToString()?.ToUpper();
         }
     }
 }

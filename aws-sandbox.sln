@@ -9,10 +9,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "fn-get-weather-info", "fn-g
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "fn-get-weather-info.Tests", "fn-get-weather-info\test\fn-get-weather-info.Tests\fn-get-weather-info.Tests.csproj", "{57F39676-8820-48EB-AF16-B1D6A0F5D731}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "work-flows", "work-flows", "{9DFDFBFE-4E09-48C2-BA44-A443440C0BE8}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".work-flows", ".work-flows", "{9DFDFBFE-4E09-48C2-BA44-A443440C0BE8}"
 	ProjectSection(SolutionItems) = preProject
 		.github\workflows\Lambda_GetWeather.yml = .github\workflows\Lambda_GetWeather.yml
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "aws-services", "aws-secret\aws-services.csproj", "{E488AAC1-BDE3-4060-91FD-E153109CAA5E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,6 +30,10 @@ Global
 		{57F39676-8820-48EB-AF16-B1D6A0F5D731}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57F39676-8820-48EB-AF16-B1D6A0F5D731}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57F39676-8820-48EB-AF16-B1D6A0F5D731}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E488AAC1-BDE3-4060-91FD-E153109CAA5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E488AAC1-BDE3-4060-91FD-E153109CAA5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E488AAC1-BDE3-4060-91FD-E153109CAA5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E488AAC1-BDE3-4060-91FD-E153109CAA5E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
