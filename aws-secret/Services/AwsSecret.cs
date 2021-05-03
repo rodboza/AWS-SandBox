@@ -3,8 +3,9 @@ using Amazon.SecretsManager;
 using Amazon.SecretsManager.Model;
 using System;
 using System.IO;
+using System.Text.Json;
 
-namespace aws_services
+namespace MyAWSTools.Services
 {
     public class AwsSecret
     {
@@ -30,7 +31,7 @@ namespace aws_services
         /*
          * AWSSDK.SecretsManager version="3.3.0" targetFramework="net45"
          */
-        public static string GetSecret(string _secretName, string _region)
+        public static JsonElement GetSecret(string _secretName, string _region )
         {
             string secretName = _secretName; // "openweather";
             string region = _region; // "us-east-2";
@@ -58,37 +59,37 @@ namespace aws_services
             {
                 // Secrets Manager can't decrypt the protected secret text using the provided KMS key.
                 // Deal with the exception here, and/or rethrow at your discretion.
-                throw e;
+                throw;
             }
             catch (InternalServiceErrorException e)
             {
                 // An error occurred on the server side.
                 // Deal with the exception here, and/or rethrow at your discretion.
-                throw e;
+                throw;
             }
             catch (InvalidParameterException e)
             {
                 // You provided an invalid value for a parameter.
                 // Deal with the exception here, and/or rethrow at your discretion
-                throw e;
+                throw;
             }
             catch (InvalidRequestException e)
             {
                 // You provided a parameter value that is not valid for the current state of the resource.
                 // Deal with the exception here, and/or rethrow at your discretion.
-                throw e;
+                throw;
             }
             catch (ResourceNotFoundException e)
             {
                 // We can't find the resource that you asked for.
                 // Deal with the exception here, and/or rethrow at your discretion.
-                throw e;
+                throw;
             }
             catch (System.AggregateException e)
             {
                 // More than one of the above exceptions were triggered.
                 // Deal with the exception here, and/or rethrow at your discretion.
-                throw e;
+                throw;
             }
 
             // Decrypts secret using the associated KMS CMK.
@@ -104,7 +105,7 @@ namespace aws_services
                 secret = System.Text.Encoding.UTF8.GetString(Convert.FromBase64String(reader.ReadToEnd()));
             }
 
-            return secret;
+            return JsonDocument.Parse(secret).RootElement;
         }
 
 

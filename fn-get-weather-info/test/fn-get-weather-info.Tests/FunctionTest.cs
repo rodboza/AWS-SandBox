@@ -8,6 +8,7 @@ using Amazon.Lambda.Core;
 using Amazon.Lambda.TestUtilities;
 
 using fn_get_weather_info;
+using System.Text.Json;
 
 namespace fn_get_weather_info.Tests
 {
@@ -20,9 +21,11 @@ namespace fn_get_weather_info.Tests
             // Invoke the lambda function and confirm the string was upper cased.
             var function = new Function();
             var context = new TestLambdaContext();
-            var upperCase = function.FunctionHandler("hello world", context);
+            string input = "{\"local\": \"Santos\"}";
+            
+            var upperCase = function.FunctionHandler(JsonDocument.Parse(input).RootElement, context);
 
-            Assert.Equal("HELLO WORLD", upperCase);
+            Assert.Equal("OK", upperCase.ToString());
         }
     }
 }
