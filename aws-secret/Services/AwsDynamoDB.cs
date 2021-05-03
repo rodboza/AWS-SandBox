@@ -28,7 +28,7 @@ namespace MyAWSTools.Services
             clima.DataColeta = climaJson.GetProperty("dt").GetInt64().ToDateTime();
             clima.Temperatura = climaJson.GetProperty("main").GetProperty("temp").GetDecimal();
             clima.Pressao = climaJson.GetProperty("main").GetProperty("pressure").GetInt32();
-            clima.Humidade = climaJson.GetProperty("main").GetProperty("humidity").GetInt32();
+            clima.Umidade = climaJson.GetProperty("main").GetProperty("humidity").GetInt32();
             clima.Visibilidade = climaJson.GetProperty("visibility").GetInt32();
             clima.VelocidadeVento = climaJson.GetProperty("wind").GetProperty("speed").GetDecimal();
             clima.DirecaoVento = climaJson.GetProperty("wind").GetProperty("deg").GetDecimal();

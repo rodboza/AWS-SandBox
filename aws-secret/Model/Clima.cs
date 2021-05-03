@@ -12,7 +12,7 @@ namespace MyAWSTools.Model
         public DateTime DataColeta { get; set; }
         public decimal Temperatura { get; set; }
         public int Pressao { get; set; }
-        public int Humidade { get; set; }
+        public int Umidade { get; set; }
         public int Visibilidade { get; set; }
         public decimal VelocidadeVento { get; set; }
         public decimal DirecaoVento { get; set; }
