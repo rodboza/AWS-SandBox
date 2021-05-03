@@ -4,6 +4,7 @@ using Amazon.SecretsManager.Model.Internal.MarshallTransformations;
 using MyAWSTools.Model;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 using System.Text.Json;
 
@@ -39,7 +40,8 @@ namespace MyAWSTools.Services
 
         public static DateTime ToDateTime (this Int64 segundos)
         {
-            return new DateTime(1970, 01, 01).AddSeconds(segundos);
+            var data = DateTime.UnixEpoch.AddSeconds(segundos);
+            return data;
         }
     }
 }
