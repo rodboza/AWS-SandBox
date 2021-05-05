@@ -17,8 +17,8 @@ namespace MyAWSTools.Services
 
             var client = new AmazonDynamoDBClient();
             var context = new DynamoDBContext(client);
-            //var x =  context.SaveAsync(clima);
-            //x.Wait();
+            var x = context.SaveAsync(clima);
+            x.Wait();
         }
 
         public static Clima ToModelClima (this JsonElement climaJson)
