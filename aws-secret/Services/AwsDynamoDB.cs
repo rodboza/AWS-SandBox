@@ -17,8 +17,8 @@ namespace MyAWSTools.Services
 
             var client = new AmazonDynamoDBClient();
             var context = new DynamoDBContext(client);
-            var x =  context.SaveAsync(clima);
-            x.Wait();
+            //var x =  context.SaveAsync(clima);
+            //x.Wait();
         }
 
         public static Clima ToModelClima (this JsonElement climaJson)
@@ -34,6 +34,9 @@ namespace MyAWSTools.Services
             clima.DirecaoVento = climaJson.GetProperty("wind").GetProperty("deg").GetDecimal();
             clima.NascerDoSol = climaJson.GetProperty("sys").GetProperty("sunrise").GetInt64().ToDateTime();
             clima.PorDoSol = climaJson.GetProperty("sys").GetProperty("sunset").GetInt64().ToDateTime();
+
+            //var dt = climaJson.GetProperty("dt").GetInt64().ToDateTime();
+            //Console.WriteLine($"data tostring {dt.ToString()} local {dt.ToLocalTime().ToString()} utc {dt.ToUniversalTime().ToString()}");
 
             return clima;
         }

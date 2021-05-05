@@ -35,6 +35,7 @@ namespace fn_get_weather_info
                 string local = input.GetProperty("local").ToString();
                 // faz request no openweather
                 var climaJson = getOpenWeather(apiId, local);
+                context.Logger.LogLine($" *** {JsonSerializer.Serialize(climaJson.ToModelClima())} ***");
                 climaJson.ToModelClima().Salvar();
 
             }
