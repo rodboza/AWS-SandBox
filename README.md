@@ -4,22 +4,28 @@
 Criar um espaço para testar algumas features da AWS e DEVOPS
 
 
-Para execução dessa aplicação, é necessário ter uma conta AWS, aqui os comandos para configurara a estação de trabalho com as suas credencias 
+Para execução dessa sandbox são necessários os seguinte itens:
+- Ter um conta no site [OpenWeather](https://openweathermap.org/)
+    - Solicitar uma API ID
+- Ter uma conta AWS;
+- Criar uma Secret no AWS Secrets Manager
+    - Nome: **openweather**
+    - Secret Key **apiid**
+    - Secret Value **API ID**
+- Criar uma rule no AWS EventBridge
+    - Apontar para Lambda	fn-get-weather-info
+    - passar como parametro **Constant (JSON text) {"local":"Santos"}**
+- Fazer as configurações no IAM
 
-onde:
 
-XXXXXXXXXXXXXXXXXXXXX >>> Access Key Id
-
-YYYYYYYYYYYYYYYYYYYYY >>> Access Key Secret
-
-ZZZZZZZZZZZZZZZZZZZZZ >>> Aws Region
+Abaixo os comandos para configurara a estação de trabalho com as suas credencias:
 
 
 No terminal (windows) digite:
 ``` sh
-setx AWS_ACCESS_KEY_ID XXXXXXXXXXXXXXXXXXXXX
-setx AWS_SECRET_ACCESS_KEY YYYYYYYYYYYYYYYYYYYYY
-setx AWS_REGION ZZZZZZZZZZZZZZZZZZZZZ
+setx AWS_ACCESS_KEY_ID "COLE-AQUI-SUA-ACCESS-KEY-ID"
+setx AWS_SECRET_ACCESS_KEY "COLE-AQUI-SUA-ACCESS-KEY-SECRET"
+setx AWS_REGION "COLE-AQUI-SUA-AWS-REGION"
 ```
 
 No terminal (windows) digite:
@@ -27,6 +33,7 @@ No terminal (windows) digite:
 git clone https://github.com/rodboza/aws-sandbox.git
 git checkout v1.0
 cd aws-sandbox
+dotnet test
 ```
 
 
