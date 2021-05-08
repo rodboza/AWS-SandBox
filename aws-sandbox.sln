@@ -14,11 +14,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".work-flows", ".work-flows"
 		.github\workflows\Lambda_GetWeather.yml = .github\workflows\Lambda_GetWeather.yml
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyAWSTools", "aws-secret\MyAWSTools.csproj", "{E488AAC1-BDE3-4060-91FD-E153109CAA5E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyAWSTools", "MyAWSTools\MyAWSTools.csproj", "{E488AAC1-BDE3-4060-91FD-E153109CAA5E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "debug tests", "debug tests", "{73EFC479-F0F7-443F-8F84-E959DED9C50F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTest", "ConsoleTest\ConsoleTest.csproj", "{50742F4F-49A1-4288-8407-C39D2C9402B7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{6B206F66-218A-45B5-8E77-2A0D1A019A7B}"
+	ProjectSection(SolutionItems) = preProject
+		DesenhoArquitetura.png = DesenhoArquitetura.png
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
