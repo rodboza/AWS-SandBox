@@ -1,4 +1,4 @@
-# AWS-Sandbox
+# AWS-Sandbox (v1.0)
 
 
 Criar um espaço para testar algumas features da AWS e DEVOPS
@@ -6,10 +6,14 @@ Criar um espaço para testar algumas features da AWS e DEVOPS
 
 Para execução dessa aplicação, é necessário ter uma conta AWS, aqui os comandos para configurara a estação de trabalho com as suas credencias 
 
-onde 
+onde:
+
 XXXXXXXXXXXXXXXXXXXXX >>> Access Key Id
+
 YYYYYYYYYYYYYYYYYYYYY >>> Access Key Secret
+
 ZZZZZZZZZZZZZZZZZZZZZ >>> Aws Region
+
 
 No terminal (windows) digite:
 ``` sh
